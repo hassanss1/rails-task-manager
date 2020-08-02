@@ -3,7 +3,9 @@
   <%= t.text_field :title %>
   <%= t.label :details %>
   <%= t.text_field :details %>
-  <%= t.check_box :completed %>
-  <%= t.label :completed %>
+  <% unless t.object.new_record? %>
+    <%= t.check_box :completed %>
+    <%= t.label :completed %>
+  <% end %>
   <%= t.submit %>
 <% end %>
